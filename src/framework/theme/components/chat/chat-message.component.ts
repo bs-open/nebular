@@ -77,6 +77,16 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
                               [message]="message" [latitude]="latitude" [longitude]="longitude">
         </nb-chat-message-map>
 
+        <nb-chat-message-map *ngSwitchCase="'map'"
+                              [sender]="sender" [date]="date"
+                              [message]="message" [latitude]="latitude" [longitude]="longitude">
+        </nb-chat-message-map>
+
+        <nb-chat-message-custom *ngSwitchCase="'custom'"
+                              [sender]="sender" [date]="date">
+            <ng-content></ng-content>
+        </nb-chat-message-custom>
+
         <nb-chat-message-text *ngSwitchDefault
                               [sender]="sender" [date]="date" [message]="message">
         </nb-chat-message-text>
